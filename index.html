@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxStream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">LuxStream</div>
+        <label for="buscador" class="visually-hidden">Buscar película o actor</label>
+        <input type="text" id="buscador" placeholder="Buscar película o actor">
+    </header>
+
+    <main>
+        <section id="continuar-viendo">
+            <h2>Continuar viendo</h2>
+            <div class="lista" id="listaContinuar"></div>
+        </section>
+
+        <section id="peliculas">
+            <h2>Todas las Películas</h2>
+            <div class="lista" id="listaPeliculas"></div>
+        </section>
+    </main>
+
+    <div id="reproductor" class="oculto">
+        <video id="videoPlayer" controls></video>
+        <button onclick="cerrarReproductor()" class="btn-cerrar">Cerrar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

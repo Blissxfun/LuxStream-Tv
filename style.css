@@ -1,0 +1,138 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Logo */
+.logo {
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e50914;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #9b59b6;
+}
+
+/* Input de búsqueda */
+input[type="text"] {
+    padding: 10px;
+    width: 220px;
+    border: none;
+    border-radius: 12px;
+    background-color: #1f1f1f;
+    color: white;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 8px #e50914;
+}
+
+/* Título de sección */
+h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    border-left: 4px solid #e50914;
+    padding-left: 10px;
+}
+
+/* Lista de películas */
+.lista {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+/* Caja individual de película */
+.pelicula {
+    width: 180px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.pelicula:hover {
+    transform: scale(1.05);
+}
+
+.pelicula img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Reproductor de video */
+#reproductor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#reproductor.oculto {
+    display: none;
+}
+
+video {
+    width: 85%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+}
+
+.btn-cerrar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e50914;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cerrar:hover {
+    background-color: #b00610;
+}
