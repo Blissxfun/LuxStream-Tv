@@ -54,14 +54,8 @@ function mostrarCategorias() {
 
 // Reproducir película
 function reproducirPelicula(pelicula) {
-  peliculaActual = pelicula;
-  const continuar = JSON.parse(localStorage.getItem("continuar")) || [];
-  const guardado = continuar.find(p => p.titulo === pelicula.titulo);
-
-  videoPlayer.src = pelicula.url;
-  videoPlayer.currentTime = guardado?.tiempo || 0;
-  reproductor.classList.remove("oculto");
-  videoPlayer.play();
+  localStorage.setItem('pelicula_actual', JSON.stringify(pelicula));
+  window.location.href = 'ver.html';
 }
 
 // Guardar progreso con tiempo
