@@ -141,32 +141,65 @@ video {
 
     body {
         padding: 10px;
+        font-size: 14px;
     }
 
-    h1 {
-        font-size: 20px;
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    h1, h2 {
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .lista {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+
+    .pelicula h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .pelicula img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .pelicula p {
+        font-size: 13px;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    a, button {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     #descripcion, #actores {
         font-size: 14px;
     }
 
-    button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    a {
-        font-size: 14px;
-    }
-
-    .pelicula {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .pelicula h3 {
-        font-size: 14px;
+    video {
+        width: 100%;
+        height: auto;
     }
 }
