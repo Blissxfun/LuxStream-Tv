@@ -136,3 +136,37 @@ video {
 .btn-cerrar:hover {
     background-color: #b00610;
 }
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #descripcion, #actores {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+
+    .pelicula {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .pelicula h3 {
+        font-size: 14px;
+    }
+}
