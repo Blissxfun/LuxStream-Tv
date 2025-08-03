@@ -1,20 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas</title>
-    <link rel="stylesheet" href="ver.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle de la Película</title>
+  <link rel="stylesheet" href="ver.css" />
 </head>
 <body>
-    <a href="index.html">Volver</a>
+  <main class="detalle-pelicula">
     
-    <h1 id="titulo"></h1>
-    <p id="descripcion"></p>
-    <video id="video" controls width="100%" style="max-width: 800px;"></video>
-    <button onclick="activarPantallaCompleta()">Pantalla Completa</button>
-    <p id="actores"></p>
+    <section class="info">
+      <h1 id="titulo" tabindex="0">Cargando título...</h1>
+      
+      <div class="metadata" aria-label="Metadatos de la película">
+        <span id="anio">Año</span> •
+        <span id="categoria">Categoría</span> •
+        <span id="duracion">Duración</span> •
+        <span id="clasificacion">Edad</span>
+      </div>
+      
+      <p id="descripcion" tabindex="0">Cargando descripción...</p>
+      
+      <div id="detalles-elenco" aria-label="Detalles del elenco y dirección">
+        <p><strong>Elenco:</strong> <span id="elenco">Cargando...</span></p>
+        <p><strong>Dirección:</strong> <span id="director">Cargando...</span></p>
+        <p><strong>Idioma:</strong> <span id="idioma">Cargando...</span></p>
+      </div>
+      
+      <div class="botones">
+        <button type="button" id="btn-reanudar" aria-label="Reanudar reproducción">▶ Reanudar</button>
+        <button type="button" id="btn-inicio" aria-label="Ver desde el inicio">↺ Ver desde el inicio</button>
+        <button type="button" id="btn-volver" aria-label="Volver al inicio">⬅ Volver al inicio</button>
+      </div>
+    </section>
+    
+    <div class="video-container">
+      <video id="video" controls preload="metadata" poster="https://via.placeholder.com/700x400?text=Video+no+cargado">
+        <!-- Fuente del video se asigna dinámicamente con JS -->
+        Tu navegador no soporta la etiqueta video.
+      </video>
+    </div>
+    
+    <aside class="portada">
+      <img id="portada" src="https://via.placeholder.com/300x450" alt="Portada de la película" />
+    </aside>
+    
+  </main>
 
-    <script src="ver.js"></script>
+  <script src="ver.js"></script>
+
+  <script>
+    // Volver al inicio
+    document.getElementById('btn-volver').addEventListener('click', () => {
+      window.location.href = 'index.html'; // Cambia por tu página principal real
+    });
+
+    // Control botones Reanudar y Ver desde inicio
+    const video = document.getElementById('video');
+    document.getElementById('btn-reanudar').addEventListener('click', () => {
+      video.play();
+    });
+    document.getElementById('btn-inicio').addEventListener('click', () => {
+      video.currentTime = 0;
+      video.play();
+    });
+  </script>
 </body>
 </html>

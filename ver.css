@@ -5,104 +5,162 @@
   box-sizing: border-box;
 }
 
-/* Fondo y tipografía */
 body {
-  background-color: #121212;
-  color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0e0e0e;
+  color: #fff;
   padding: 20px;
-  max-width: 900px;
-  margin: 30px auto;
-  border-radius: 12px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.detalle-pelicula {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  align-items: flex-start;
   background: #181818;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 20, 0.3);
 }
 
-/* Enlace Volver */
-a {
+/* Info y video juntos */
+.info {
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
   color: #e50914;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 25px;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: #ffffff;
+  margin-bottom: 10px;
+  user-select: none;
 }
 
-/* Título */
-h1#titulo {
-  font-size: 2.5rem;
+.metadata {
+  color: #cccccc;
+  font-size: 1rem;
   margin-bottom: 15px;
-  text-align: center;
-  letter-spacing: 1px;
+  user-select: none;
 }
 
-/* Descripción / Sinopsis */
-p#descripcion {
+#descripcion {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+#detalles-elenco p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.botones button {
+  background-color: #e50914;
+  border: none;
+  padding: 14px 30px;
+  color: #fff;
+  font-weight: 700;
   font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 25px;
-  padding: 0 10px;
-  color: #ddd;
-  text-align: justify;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.15s;
+  user-select: none;
+}
+
+.botones button:hover,
+.botones button:focus {
+  background-color: #b20710;
+  outline: none;
+  transform: scale(1.05);
 }
 
 /* Video */
-video#video {
-  display: block;
-  margin: 0 auto 25px auto;
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.7);
-  background: black;
-  max-width: 100%;
-}
-
-/* Botón Pantalla Completa */
-button {
-  display: block;
-  margin: 0 auto 30px auto;
-  padding: 12px 28px;
-  background-color: #e50914;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.7);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  background-color: #000;
   user-select: none;
 }
-button:hover {
-  background-color: #b00610;
-  box-shadow: 0 8px 25px rgba(176, 6, 16, 0.8);
+
+#video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Actores */
-p#actores {
-  font-size: 1rem;
-  color: #bbb;
-  text-align: center;
-  margin-bottom: 40px;
-  font-style: italic;
+/* Portada */
+.portada {
+  flex: 1 1 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.portada img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  user-select: none;
 }
 
 /* Responsive */
-@media (max-width: 500px) {
-  body {
-    margin: 15px;
-    padding: 10px;
+@media (max-width: 900px) {
+  .detalle-pelicula {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
   }
-  h1#titulo {
-    font-size: 1.8rem;
+
+  .info {
+    max-width: 100%;
+    order: 2;
   }
-  p#descripcion {
+
+  .video-container {
+    max-width: 100%;
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .portada {
+    margin-bottom: 20px;
+  }
+
+  .botones {
+    justify-content: center;
+  }
+
+  .info h1 {
+    font-size: 2rem;
+  }
+
+  #descripcion,
+  #detalles-elenco p {
     font-size: 1rem;
-  }
-  button {
-    font-size: 1rem;
-    padding: 10px 22px;
   }
 }
